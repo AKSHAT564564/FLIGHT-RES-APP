@@ -1,16 +1,14 @@
 # flight_res_system
 
-A new Flutter project.
+Flight Reservation System APP.
 
-## Getting Started
+Considers user LOGIN/Register pages with a SImple UI.
 
-This project is a starting point for a Flutter application.
+Used SQL Database with flutter for storing data of flights.
 
-A few resources to get you started if this is your first Flutter project:
+Contains search flight option which runs query on the Database and gives results.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+User Profile Page with LOGOUT feature.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<li><img src="app"></li>
+
