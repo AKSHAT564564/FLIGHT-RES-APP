@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "106023546841",
+    "project_id": "flight-res-system",
+    "storage_bucket": "flight-res-system.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:106023546841:android:2129a78c44812a747933c8",
+        "android_client_info": {
+          "package_name": "com.example.flight_res_system"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "106023546841-htngo2qqlul0k2i749ssa41a88itofvf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpKQRJVHVsKBtgl80Dgrs_CTiZXq3jdX0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "106023546841-htngo2qqlul0k2i749ssa41a88itofvf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
