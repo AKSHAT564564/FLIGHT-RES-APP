@@ -14,5 +14,5 @@ User Profile Page with LOGOUT feature.
   <img src="app-walkthrough/image_18.png"  width="200" height="400">
   <img src="app-walkthrough/image_17.png"  width="200" height="400">
   <img src="app-walkthrough/image_16.png"  width="200" height="400">
-<img src="app-walkthrough/image_16.png"  width="200" height="400"></li>
+<img src="app-walkthrough/image_15.png"  width="200" height="400"></li>
 
