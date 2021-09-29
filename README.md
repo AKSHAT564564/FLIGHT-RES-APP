@@ -10,5 +10,5 @@ Contains search flight option which runs query on the Database and gives results
 
 User Profile Page with LOGOUT feature.
 
-<li><img src="app"></li>
+<li><img src="app-walkthrough/image_15"></li>
 
