@@ -10,7 +10,7 @@ Contains search flight option which runs query on the Database and gives results
 
 User Profile Page with LOGOUT feature.
 
-Added Profile Pic utility(not itegrated)
+Added Profile Pic utility completely with upload and update profile option.
 
 <li><img src="app-walkthrough/image_19.png" width="200" height="400">
   <img src="app-walkthrough/image_18.png"  width="200" height="400">
