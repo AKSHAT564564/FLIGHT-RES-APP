@@ -30,7 +30,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     'firstName': "",
     'lastName': "",
     'email': "",
-    'password': ""
+    'password': "",
+    'profileUrl':""
   };
 
   // final emailFeild = TextFormField(
@@ -88,7 +89,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     await FirebaseFirestore.instance.collection('userData').add({
       'email': _userData["email"],
       'firstName': _userData["firstName"],
-      'lastName': _userData["lastName"]
+      'lastName': _userData["lastName"],
+      'profilePic' : _userData["profileUrl"]
     });
     setState(() {
       showSpinner = false;

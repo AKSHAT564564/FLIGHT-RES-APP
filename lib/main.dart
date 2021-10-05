@@ -1,5 +1,6 @@
 import 'package:flight_res_system/pages/home_page.dart';
 import 'package:flight_res_system/pages/profile_page.dart';
+import 'package:flight_res_system/pages/upload_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flight_res_system/pages/login_screen.dart';
 import 'package:flight_res_system/pages/registration_screen.dart';

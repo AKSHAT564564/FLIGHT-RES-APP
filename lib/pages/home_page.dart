@@ -175,7 +175,7 @@ class _HomePageState extends State<HomePage>
                           FontAwesomeIcons.exchangeAlt,
                           color: Colors.blue,
                         ),
-                        onPressed: () {
+                        onPressed: () { //swap data in two search feilds
                           if (_originStationController.text != '' &&
                               _destinationController.text != '') {
                             var temp = _originStationController.text;
