@@ -10,6 +10,8 @@ Contains search flight option which runs query on the Database and gives results
 
 User Profile Page with LOGOUT feature.
 
+Added Profile Pic utility(not itegrated)
+
 <li><img src="app-walkthrough/image_19.png" width="200" height="400">
   <img src="app-walkthrough/image_18.png"  width="200" height="400">
   <img src="app-walkthrough/image_17.png"  width="200" height="400">
