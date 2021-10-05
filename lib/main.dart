@@ -1,6 +1,5 @@
 import 'package:flight_res_system/pages/home_page.dart';
 import 'package:flight_res_system/pages/profile_page.dart';
-import 'package:flight_res_system/pages/upload_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flight_res_system/pages/login_screen.dart';
 import 'package:flight_res_system/pages/registration_screen.dart';
@@ -28,8 +27,7 @@ class MyApp extends StatelessWidget {
         "/": (context) => const LoginScreen(),
         "/first": (context) => const RegistrationScreen(),
         "/second": (context) => const HomePage(),
-        "/third": (context) => const ProfilePage(),
-      },
+        "/third": (context) => const ProfilePage(), },
     );
   }
 }

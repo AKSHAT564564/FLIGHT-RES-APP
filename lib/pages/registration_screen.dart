@@ -86,7 +86,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   }
 
   addUser() async {
-    await FirebaseFirestore.instance.collection('userData').add({
+    await FirebaseFirestore.instance.collection('userData').doc(_userData["email"]).set({
       'email': _userData["email"],
       'firstName': _userData["firstName"],
       'lastName': _userData["lastName"],

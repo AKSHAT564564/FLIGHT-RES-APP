@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flight_res_system/pages/upload_image.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -13,7 +14,10 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   final _auth = FirebaseAuth.instance;
-  String firstName = "", lastName = "", userEmail = "";
+
+  String firstName = "", lastName = "", userEmail = "", profilePicUrl = "";
+
+  Widget abcd = Text('hello');
 
   @override
   void initState() {
@@ -35,11 +39,47 @@ class _ProfilePageState extends State<ProfilePage> {
         .where('email', isEqualTo: userEmail)
         .get();
 
-    firstName = "${query.docs[0]["firstName"]}";
-    lastName = "${query.docs[0]["lastName"]}";
+    setState(() {
+      firstName = "${query.docs[0]["firstName"]}";
+      lastName = "${query.docs[0]["lastName"]}";
+      profilePicUrl = "${query.docs[0]["profilePic"]}";
 
-    firstName = firstName.toUpperCase();
-    lastName = lastName.toUpperCase();
+      firstName = firstName.toUpperCase();
+      lastName = lastName.toUpperCase();
+    });
+  }
+
+  Widget getUserProfilePic() {
+    print(profilePicUrl);
+    if (profilePicUrl != "")
+      return GestureDetector(
+        onTap: () {
+          Navigator.of(context)
+              .push(
+                new MaterialPageRoute(
+                    builder: (_) => new PickImage(email: userEmail)),
+              )
+              .then((value) => value ? initState() : null);
+        },
+        child: CircleAvatar(
+          radius: 60.0,
+          child: Image.network(profilePicUrl),
+        ),
+      );
+    else
+      return IconButton(
+          icon: Icon(
+            FontAwesomeIcons.userNinja,
+            size: 60,
+          ),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => PickImage(
+                          email: userEmail,
+                        )));
+          });
   }
 
   @override
@@ -53,10 +93,7 @@ class _ProfilePageState extends State<ProfilePage> {
         child: Column(
           children: [
             SizedBox(height: 160),
-            Icon(
-              FontAwesomeIcons.user,
-              size: 60,
-            ),
+            getUserProfilePic(),
             SizedBox(height: 30),
             Text('$firstName $lastName',
                 style: TextStyle(

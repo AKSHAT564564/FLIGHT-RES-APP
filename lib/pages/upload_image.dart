@@ -1,15 +1,14 @@
 import 'dart:io';
-import 'dart:typed_data';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:path/path.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class PickImage extends StatefulWidget {
-  const PickImage({Key? key}) : super(key: key);
+  final email;
+  const PickImage({Key? key, required this.email}) : super(key: key);
 
   @override
   _PickImageState createState() => _PickImageState();
@@ -47,13 +46,11 @@ class _PickImageState extends State<PickImage> {
 
     final snapshot = await task!.whenComplete(() => {});
     urlDownload = await snapshot.ref.getDownloadURL();
-  }
 
-  Widget displayImage() {
-    return Container(
-        child: CircleAvatar(
-            child: Image.network(
-                'https://firebasestorage.googleapis.com/v0/b/flight-res-system.appspot.com/o/files%2FScreenshot_2021-09-30-22-09-27-92_6012fa4d4ddec268fc5c7112cbb265e7.jpg?alt=media&token=16b88730-b093-48d5-ad18-437973f1f18b')));
+    FirebaseFirestore.instance
+        .collection('userData')
+        .doc(widget.email)
+        .update({"profilePic": urlDownload});
   }
 
   @override
@@ -80,7 +77,7 @@ class _PickImageState extends State<PickImage> {
                     onPressed: () {
                       selectFile();
                     },
-                    child: Text('Log In'),
+                    child: Text('Select Image'),
                   ),
                 ),
                 SizedBox(
@@ -95,9 +92,10 @@ class _PickImageState extends State<PickImage> {
                       onPrimary: Colors.white, // foreground
                     ),
                     onPressed: () async {
-                      selectFile();
+                      await uploadFile();
+                      Navigator.pop(context,true);
                     },
-                    child: Text('Log In'),
+                    child: Text('Upload Image'),
                   ),
                 )
               ],
